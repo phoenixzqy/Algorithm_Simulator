@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Algorithm Simulator</title>
+		<meta charset="utf-8" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css"/>
+	    <!-- Other stylesheets may go here -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<!-- Javascripts -->
+		<script src="js/driver.js"></script>
+
+	</head>
+	<body onload="init()">
+		<header>
+				<h2>Sorting Algorithms Simulator</h2>
+		</header>
+		<main>
+			<div id="wrapper">
+				<div class="menu">
+					<table style="width:100%">
+						<tr>
+							<td><label class="control-label">Method:</label></td>
+							<td>
+								<div class="menu_btn selectContainer">
+									<select id="method" class="form-control" onchange="reset()">
+										<option value="selection">selection sort</option>
+										<option value="insertion">insertion sort</option>
+										<option value="merge">merge sort</option>
+										<option value="quick">quick sort</option>
+										<option value="bubble">bubble sort</option>
+										<option value="radix">radix sort</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="menu">
+					<table style="width:100%">
+						<tr>
+							<td>Array Size:</td>
+							<td><input type="number" class="menu_btn" onchange="reset()" id="array_size" max=20 min=5 name="array_size" value="15"></td>
+						</tr>
+						<tr>
+							<td>Delay (ms):</td>
+							<td><input type="number" class="menu_btn" onchange="resetDelay()" id="delay" max=1000 min=100 name="delay" value="200"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="menu">
+					<table style="width:100%">
+						<tr>
+							<td>
+								<button type="button" class="btn btn-default menu_btn" onclick="reset()">reset</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" class="btn btn-default menu_btn" onclick="sort()">start</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="alert">
+					<p id="alert" style="color:red"></p>
+				</div>
+				<div>
+					<canvas id="myCanvas" width="850" height="300" style="border:1px solid #c3c3c3;">
+						Your browser does not support the canvas element.(this is a fall back content, shows up when a browser does not support canvas)
+					</canvas>
+				</div>
+				<div class="progress_div">
+
+					<button type="button" class="btn btn-default btn-xs" onclick="prev()"><span class="glyphicon glyphicon-step-backward"></span></button>
+					<button type="button" class="btn btn-default btn-xs" onclick="pause()"><span class="glyphicon glyphicon-pause"></span></button>
+					<button type="button" class="btn btn-default btn-xs" onclick="play()"><span class="glyphicon glyphicon-play"></span></button>
+					<button type="button" class="btn btn-default btn-xs" onclick="next()"><span class="glyphicon glyphicon-step-forward"></span></button>
+
+					<progress id="progress_bar"></progress>
+				</div>
+				<div class="codeDisplayBox"><pre id="code" class="codeDisplay"></pre></div>
+				<div class="reference bg-info">
+					<p>Reference:</p>
+					<p id="reference" style="font-size:80%;"></p>
+				</div>
+			</div>
+		</main>
+		<footer>
+				<p class="footer-left">Last Modified: Nov.27th 2015</p>
+				<p class="footer-center">
+					<!-- Created By:Felix Zhao<br>
+					Email Me: <a href="mailto:qzhaogame@gmail?Subject=Hello%20again" target="_top" style="color:yellow">qzhaogame@gmail.com</a> -->
+				</p>
+				<p class="footer-right">Made with: JavaScript<br>css.Bootstrap</p>
+
+		</footer>
+	</body>
+</html>

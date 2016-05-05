@@ -1,0 +1,134 @@
+table, td, th {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+body {
+}
+footer{
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+    background-color: #0099cc;
+    color: #ffffff;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 10px;
+}
+header{
+    width: 100%;
+    min-height: 80px;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    float: top;
+    background-color: #0099cc;
+    color: #ffffff;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 10px;
+}
+progress{
+
+    width: 85%;
+    padding: 0 auto;
+}
+.footer-left{
+    width: 33%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: left;
+    float: left;
+}
+.footer-right{
+    width: 33%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: right;
+    float: left;
+}
+.footer-center{
+    width: 33%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: center;
+    float: left;
+}
+#wrapper {
+    width: 850px;
+    min-height: auto;
+    margin:0 auto;
+    padding: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.box{
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 10px;
+    float: left;
+    background-color: #0099cc;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.alert{
+    width: 100%;
+    height: 10px;
+    padding: 0;
+    margin: 0 auto;
+    float: left;
+}
+.menu{
+    width: 33%;
+    height: 60px;
+    padding: 0 auto;
+    padding-left: 20px;
+    margin: 0 auto;
+    float: left;
+    align: right;
+}
+.menu_btn{
+    min-width: 20%;
+    width: 90%;
+}
+.codeDisplayBox{
+    width: 100%;
+    min-height: 100px;
+    padding: auto;
+    padding-top: 10px;
+    margin: 0 auto;
+    float: left;
+}
+.codeDisplay{
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.reference{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+    float: left;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.progress_div{
+    width: 100%;
+    height: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+
+    margin: 0 auto;
+    float: left;
+}
