@@ -1,0 +1,19 @@
+<p>The insertion sort works just like its name suggests - it inserts each item into its proper place in the final list. In Insertion sort, the first iteration starts with comparison of 1st element with 0th element. In the second iteration the element is compared with 0th and 1st element. In general in every iteration an element is compared with all elements. If at same point it is found the element can be inserted at a position then space is created for it by shifting the other element one position right and inserting the element at the suitable position. This procedure is repeated for all the element in the array.</p>
+<p>Analysis: The implementation of insertion Sort shows that there are (n−1) passes to sort n . The iteration starts at position 1 and moves through position (n−1), as these are the elements that need to be inserted back into the sorted sublists. The maximum number of comparisons for an insertion sort is (n−1) .Total numbers of comparisons are:
+<br>(n − 1) + (n − 2) + ... + 2 + 1 = n (n − 1) / 2=O(n2)
+<br>Best Case = O(n2)
+<br>Average Case= O(n2)
+<br>Worst Case= O (n2)</p>
+
+<ul>
+    <li>Pros:</li>
+        <ul>
+            <li>Insertion sort exhibits a good performance when dealing with a small list.</li>
+            <li>The insertion sort is an in-place sorting algorithm so the space requirement is minimal.</li>
+        </ul>
+    <li>Cons:</li>
+    <ul>
+        <li>Insertion sort is useful only when sorting a list of few elements.</li>
+        <li>The insertion sorts repeatedly scans the list of elements each time inserting the elements in the unordered sequence into its correct position.</li>
+    </ul>
+</ul>

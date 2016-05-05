@@ -8,94 +8,110 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
 		<!-- Javascripts -->
 		<script src="js/driver.js"></script>
 
 	</head>
 	<body onload="init()">
-		<header>
-				<h2>Sorting Algorithms Simulator</h2>
-		</header>
-		<main>
-			<div id="wrapper">
-				<div class="menu">
-					<table style="width:100%">
-						<tr>
-							<td><label class="control-label">Method:</label></td>
-							<td>
-								<div class="menu_btn selectContainer">
-									<select id="method" class="form-control" onchange="reset()">
-										<option value="selection">selection sort</option>
-										<option value="insertion">insertion sort</option>
-										<option value="merge">merge sort</option>
-										<option value="quick">quick sort</option>
-										<option value="bubble">bubble sort</option>
-										<option value="radix">radix sort</option>
-									</select>
-								</div>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="menu">
-					<table style="width:100%">
-						<tr>
-							<td>Array Size:</td>
-							<td><input type="number" class="menu_btn" onchange="reset()" id="array_size" max=20 min=5 name="array_size" value="15"></td>
-						</tr>
-						<tr>
-							<td>Delay (ms):</td>
-							<td><input type="number" class="menu_btn" onchange="resetDelay()" id="delay" max=1000 min=100 name="delay" value="200"></td>
-						</tr>
-					</table>
-				</div>
-				<div class="menu">
-					<table style="width:100%">
-						<tr>
-							<td>
-								<button type="button" class="btn btn-default menu_btn" onclick="reset()">reset</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="button" class="btn btn-default menu_btn" onclick="sort()">start</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="alert">
-					<p id="alert" style="color:red"></p>
-				</div>
-				<div>
-					<canvas id="myCanvas" width="850" height="300" style="border:1px solid #c3c3c3;">
-						Your browser does not support the canvas element.(this is a fall back content, shows up when a browser does not support canvas)
-					</canvas>
-				</div>
-				<div class="progress_div">
+		<div id="wrapper">
+			<header>
+					<h2>Sorting Algorithms Simulator</h2>
+					<p>A Fantastic Tool For You To Learn Things!</p>
+			</header>
+			<main>
+				<nav>
+					<ul>
+						<li><a href="./Algorithm_Simulation.html" class="active">Sorting</a></li>
+						<li><a href="tree.html">Tree</a></li>
+						<li><a href="graph.html">Graph</a></li>
+						<li style="float:right;"><a href="about.html">About</a><li>
+					</ul>
+				</nav>
 
-					<button type="button" class="btn btn-default btn-xs" onclick="prev()"><span class="glyphicon glyphicon-step-backward"></span></button>
-					<button type="button" class="btn btn-default btn-xs" onclick="pause()"><span class="glyphicon glyphicon-pause"></span></button>
-					<button type="button" class="btn btn-default btn-xs" onclick="play()"><span class="glyphicon glyphicon-play"></span></button>
-					<button type="button" class="btn btn-default btn-xs" onclick="next()"><span class="glyphicon glyphicon-step-forward"></span></button>
+				<!-- <div class="TODO">
+					<h3>TODO list:</h3>
+					<h4>Sorting:</h4>
+					<ul class="TODO_list">
+						<li class="TODO_DONE">selection sort</li>
+						<li class="TODO_DONE">insertion sort</li>
+						<li class="TODO_DONE">bubble sort</li>
+						<li class="TODO_DONE">merge sort</li>
+						<li>quick sort</li>
+						<li>radix sort</li>
+						<li>heap sort</li>
+					</ul>
+					<h4>Tree:</h4>
+					<ul class="TODO_list">
+						<li>BST-binary search tree</li>
+						<li>AVL tree</li>
+					</ul>
+					<h4>Graph:</h4>
+					<ul class="TODO_list">
+						<li>Backtracking</li>
+						<li>Dijkstra’s Algorithm</li>
+						<li>Kruskal’s Algorithem</li>
+						<li>Prim's AsAslgorithem</li>
+					</ul>
+				</div> -->
+				<div class="div-operation-area">
+					<div class="div-menu">
+						<ul>
+							<li><lable>Method:</lable>
+							<select id="method" class="select-form-control" onchange="reset()">
+								<option value="selection">selection sort</option>
+								<option value="insertion">insertion sort</option>
+								<option value="bubble">bubble sort</option>
+								<option value="merge">merge sort</option>
+								<!-- <option value="quick">quick sort</option> -->
+								<!-- <option value="radix">radix sort</option> -->
+							</select></li>
+							<li><lable>Array Size:</lable>
+							<input type="number" class="input-form-control" onchange="reset()" id="array_size" max=15 min=5 name="array_size" value="15"></li>
+							<li><lable>Delay(ms):</lable>
+							<input type="number" class="input-form-control" onchange="resetDelay()" id="delay" max=1000 min=100 name="delay" value="200"></li>
 
-					<progress id="progress_bar"></progress>
-				</div>
-				<div class="codeDisplayBox"><pre id="code" class="codeDisplay"></pre></div>
-				<div class="reference bg-info">
-					<p>Reference:</p>
-					<p id="reference" style="font-size:80%;"></p>
-				</div>
-			</div>
-		</main>
-		<footer>
-				<p class="footer-left">Last Modified: Nov.27th 2015</p>
-				<p class="footer-center">
-					<!-- Created By:Felix Zhao<br>
-					Email Me: <a href="mailto:qzhaogame@gmail?Subject=Hello%20again" target="_top" style="color:yellow">qzhaogame@gmail.com</a> -->
-				</p>
-				<p class="footer-right">Made with: JavaScript<br>css.Bootstrap</p>
+							<li style="padding-top:30px;"><button type="button" class="btn" onclick="reset()">Reset</button></li>
+							<li><button type="button" class="btn" onclick="sort()">Start</button></li>
 
-		</footer>
+							<li style="padding-top:30px;"><button type="button" class="btn" onclick="prev()">Step Back</button></li>
+							<li><button type="button" class="btn" onclick="next()">Step Forward</button></li>
+							<li><button type="button" class="btn" onclick="pause()">Pause</button></li>
+							<li><button type="button" class="btn" onclick="play()">Play</li>
+						</ul>
+					</div>
+					<div class="div-canvas">
+						<canvas id="myCanvas" width="780px" height="250px" style="border:1px solid #c3c3c3;">
+							Your browser does not support the canvas element.(this is a fall back content, shows up when a browser does not support canvas)
+						</canvas>
+					</div>
+					<div class="div-alert">
+							<p id="alert"></p>
+					</div>
+					<div class="div-prograss-bar">
+						<progress id="progress_bar"></progress>
+					</div>
+
+					<div class="div-code-display">
+						<pre id="code"></pre>
+					</div>
+				</div>
+
+				<div class="div-reference-area">
+					<hr>
+					<h2>Reference:</h2>
+					<blockquote id="reference" cite="http://www.ijarcsse.com/docs/papers/Volume_3/11_November2013/V3I10-0312.pdf"></blockquote>
+				</div>
+			</main>
+			<footer>
+					<p class="footer-left">Last Modified: Feb.16th 2016</p>
+					<p class="footer-center">
+						Created By:Felix Zhao<br>
+						Email Me: <a href="mailto:qzhao8731@gmail?Subject=Hello%20again" target="_top" >qzhao8731@gmail.com</a>
+					</p>
+					<p class="footer-right">Made with: AWS EC2 WebServer<br/>JavaScript<br/>HTML5/CSS</p>
+
+			</footer>
+		</div>
 	</body>
 </html>

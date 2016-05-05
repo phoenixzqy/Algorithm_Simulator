@@ -1,0 +1,20 @@
+<p>Quick sort is a divide and conquer algorithm. Quick sort first divides a large list into two smaller sub-lists: the low elements and the high elements. Quick sort can then recursively sort the sub-lists.
+The steps are:
+<br>Pick an element, called a pivot, from the list.
+<br>Reorder the list so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.
+<br>Recursively sort the sub-list of lesser elements and the sub-list of greater elements.</p>
+<p>Analysis: To analyze the Quick Sort algorithm, note that for a list of length n, if the partition always occurs in the middle of the list, there will again be logn divisions. In order to find the split point, each of the n items needs to be checked against the pivot value. The result is nlogn. In the worst case, the split points may not be in the middle and can be very skewed to the left or the right, leaving a very uneven division. In this case, sorting a list of n items divides into sorting a list of 0 items and a list of n−1 items. Then sorting a list of n−1, divides into a list of size 0 and list of size n−2, and so on. The result is an O(n2) sort with all of the overhead that recursion requires. <br>Best Case = O(n log n)
+<br>Average Case=O (n log n) <br>Worst Case= O (n2)<p>
+
+<ul>
+    <li>Pros:</li>
+        <ul>
+            <li>One of the fastest algorithms on average.</li>
+            <li>The list is being traversed sequentially, which produces very good locality of reference and cache behavior for arrays.</li>
+        </ul>
+    <li>Cons:</li>
+    <ul>
+        <li>Space used in the average case for implementing recursive function calls is O (log n) and hence proves to be a bit space costly, especially when it comes to large data sets.</li>
+        <li>The worst-case complexity is O(n^2)</li>
+    </ul>
+</ul>

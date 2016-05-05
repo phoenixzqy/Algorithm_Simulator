@@ -1,0 +1,19 @@
+<p>This sorting method is an example of the Divide-And-Conquer paradigm i.e. it breaks the data into two halves and then sorts the two half data sets recursively, and finally merges them to obtain the complete sorted list. Conceptually, a merge sort works as follows
+<br> Divide the unsorted list into n sublists, each containing 1 element (a list of 1 element is considered sorted).
+<br> Repeatedly merge sublists to produce new sublists until there is only 1 sublist remaining. This will be the sorted list.</p>
+<p>Analysis: In order to analyze the Merge Sort function, we need to consider the two distinct processes that make up its implementation. First, the list is split into halves. We divide a list in half logn times where n is the length of the list. The second process is the merge. Each item in the list will eventually be processed and placed on the sorted list. So the merge operation which results in a list of size n requires n operations. The result of this analysis is that logn splits, each of which costs n for a total of n (log n) operations.
+<br>Best Case = O (n logn)
+<br>Average Case= O (n logn)
+<br>Worst Case= O (n logn)</p>
+<ul>
+    <li>Pros:</li>
+        <ul>
+            <li>Time Complexity is O(nlogn).</li>
+            <li>It can be used for both internal and external sorting</li>
+        </ul>
+    <li>Cons:</li>
+    <ul>
+        <li>At least twice the memory requirements of the other sorts because it is recursive.</li>
+        <li>Space complexity is very high</li>
+    </ul>
+</ul>
