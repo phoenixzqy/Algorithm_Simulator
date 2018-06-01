@@ -1,4 +1,4 @@
-# Algorithm_Simulator-web-
+# Algorithm_Simulator
 A school project
 
 ### Features
