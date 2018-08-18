@@ -1,6 +1,7 @@
 # Algorithm_Simulator
 A school project
 
+### [DEMO](https://phoenixzqy.github.io/demo/algorithmSimulator/index.html)
 ### Features
 1. Simulate the procedure of 4 difference sorting algorithms with a visual bar chart
 2. Display the code procedure step by step, so that people could easily understand which piece once is exicuting.
